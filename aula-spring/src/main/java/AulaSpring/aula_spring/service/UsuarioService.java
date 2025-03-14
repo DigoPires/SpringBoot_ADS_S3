@@ -22,4 +22,14 @@ public class UsuarioService {
         return new ArrayList<>(usuarios);
     }
 
+    public boolean validarLogin(String email, String senha){
+        for(Usuario usuario : usuarios){
+            if(usuario.getEmail().equals(email) && usuario.getSenha().equals(senha)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
